@@ -108,7 +108,7 @@ After (re)installing the plugin, you can call `http://my-shop.com/frontend/test/
 ### Template
 If you remove the `die("Hello World");` call, Shopware will raise an exception. By default Shopware
 will automatically try to find a template for your controller. In this case, this template should be called `frontend/test/index.tpl`.
-As this template does not exists, yet, an exception is raised. This is easy to fix:
+As this template does not exist yet, an exception is raised. This is easy to fix:
 
 Create the file `Views/frontend/test/index.tpl` in your plugin and add the following code:
 
@@ -173,11 +173,11 @@ The order of the events is the following:
 * Enlight_Controller_Action_PostDispatchSecure
 
 As you can see, some events are more specific regarding the called module / controller than others. Basically this will
-allow you to e.g. register to a PreDispatch event, no matter if it is emitted in the frontend, backend, api or widget module.
+allow you to register for example to a PreDispatch event, no matter if it is emitted in the frontend, backend, api or widget module.
 In the same way, you can register to all PreDispatch events in the frontend module using the `Enlight_Controller_Action_PreDispatch_Frontend`
 event. The same applies to the `PostDispatchSecure` events.
 
-In the callback method of your event, you have complete access to the original controller, so that you can e.g. modify
+In the callback method of your event, you have complete access to the original controller, so that you can modify
 the view or some input parameters:
 
 
@@ -218,7 +218,7 @@ of plugin controllers, the controllers won't be cached unless you add them to th
 Also keep in mind that the cache uses the URL of a page to figure out if the page is already cached or not. So the both URLs
 `http://my-shop.com/frontend/test/index?p=1` and `http://my-shop.com/frontend/test/index?p=2` will (of course) be handled
 as two separate pages for the HTTP cache.
-Additional in detail information about the HTTP cache can be found [here](https://developers.shopware.com/blog/2015/02/11/understanding-the-shopware-http-cache/).
+Additional detailed information about the HTTP cache can be found [here](https://developers.shopware.com/blog/2015/02/11/understanding-the-shopware-http-cache/).
 
 ## SEO
 Technical controller URLs like `http://my-shop.com/frontend/test/index` are, in most cases, not what you want to have.
